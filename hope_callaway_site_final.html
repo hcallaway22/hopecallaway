@@ -1,0 +1,534 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hope Callaway — Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+
+<style id="htmlpub-breakpoint-visibility">@media (max-width: 390px) { .hp-hide-mobile { display: none !important; } }
+@media (min-width: 391px) and (max-width: 768px) { .hp-hide-tablet { display: none !important; } }
+@media (min-width: 769px) { .hp-hide-desktop { display: none !important; } }</style><style>
+  :root {
+    --bg: #0F1419;
+    --bg-2: #161D24;
+    --bg-3: #1C252E;
+    --bg-card: #1A2330;
+    --accent: #6BAF92;
+    --accent-dim: #4A8A70;
+    --accent-glow: rgba(107,175,146,0.12);
+    --text: #EDF2F0;
+    --text-muted: #8A9FA8;
+    --text-dim: #5A7080;
+    --border: rgba(107,175,146,0.15);
+    --border-subtle: rgba(255,255,255,0.06);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.25rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(15,20,25,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 4rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -20%; right: -10%;
+    width: 60vw; height: 60vw;
+    background: radial-gradient(ellipse, rgba(107,175,146,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.85rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3.2rem, 7vw, 6.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero h1 em .grad-actually { color: transparent; -webkit-text-fill-color: transparent; }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 580px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    border-radius: 0.25rem;
+    font-size: 0.88rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #0F1419;
+  }
+  .btn-primary:hover { background: #7EC4A3; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { color: var(--text); border-color: var(--accent); }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 4rem;
+    display: flex; align-items: center; gap: 0.75rem;
+    color: var(--text-dim); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 48px; height: 1px; background: var(--text-dim);
+    animation: scrollLine 2s infinite;
+  }
+  @keyframes scrollLine {
+    0%, 100% { transform: scaleX(1); transform-origin: left; }
+    50% { transform: scaleX(0.4); transform-origin: left; }
+  }
+
+  /* SECTIONS */
+  section { padding: 7rem 4rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 3rem;
+    color: var(--text);
+  }
+
+  /* ABOUT */
+  .about { background: var(--bg-2); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+  }
+  .about-text p {
+    color: var(--text-muted); font-size: 1rem; line-height: 1.9;
+    margin-bottom: 1.25rem;
+  }
+  .about-text p strong { color: var(--text); font-weight: 500; }
+  .about-principles { display: flex; flex-direction: column; gap: 1.25rem; }
+  .principle {
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border-subtle);
+    border-left: 2px solid var(--accent);
+    background: var(--bg-card);
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+  .principle-title {
+    font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.35rem;
+  }
+  .principle p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* STATS */
+  .stats { background: var(--bg); }
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+  }
+  .stat-card {
+    padding: 2rem 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-top: 2px solid var(--accent);
+    border-radius: 0.25rem;
+  }
+  .stat-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem; color: var(--text);
+    line-height: 1; margin-bottom: 0.4rem;
+  }
+  .stat-number span { color: var(--accent); }
+  .stat-label { font-size: 0.83rem; color: var(--text-muted); line-height: 1.5; }
+
+  /* WORK */
+  .work { background: var(--bg-2); }
+  .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .work-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .work-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: var(--accent-glow);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .work-card:hover { border-color: var(--border); transform: translateY(-2px); }
+  .work-card:hover::after { opacity: 1; }
+  .work-tag {
+    display: inline-block;
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); background: var(--accent-glow);
+    padding: 0.25rem 0.65rem; border-radius: 2rem;
+    margin-bottom: 1rem;
+  }
+  .work-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.45rem; color: var(--text);
+    margin-bottom: 0.75rem; line-height: 1.2;
+  }
+  .work-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 1.25rem; }
+  .work-metric {
+    font-size: 0.8rem; color: var(--accent);
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 1rem; margin-top: auto;
+    font-weight: 500; letter-spacing: 0.04em;
+  }
+
+  /* HOW I WORK */
+  .how { background: var(--bg); }
+  .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .how-item { padding: 0.5rem 0; }
+  .how-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 8px;
+    background: rgba(107,175,146,0.08);
+    border: 1px solid rgba(107,175,146,0.22);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(107,175,146,0.08), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .how-item h3 { font-size: 1rem; font-weight: 500; color: var(--text); margin-bottom: 0.6rem; }
+  .how-item p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; }
+
+  /* CONTACT */
+  .contact {
+    background: var(--bg-2);
+    text-align: center;
+  }
+  .contact .section-inner { max-width: 640px; }
+  .contact p { color: var(--text-muted); font-size: 1rem; line-height: 1.85; margin-bottom: 2.5rem; }
+  .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--border-subtle);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  footer p { font-size: 0.8rem; color: var(--text-dim); }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .work-grid { grid-template-columns: 1fr; }
+    .how-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style><style>#htmlpub-link-input::placeholder{color:rgba(0,0,0,0.40);}ul,ol{padding:20px;}</style><style>
+.grad-actually {
+  background: linear-gradient(90deg, #6BAF92, #8A9FA8, #7ABFB0, #8A9FA8, #6BAF92);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: grad-shift 7s ease-in-out infinite;
+  display: inline-block;
+}
+@keyframes grad-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 250% center; }
+  50% { background-position: 125% center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .grad-actually { animation: none; background-position: 0% center; }
+}
+</style></head>
+<body>
+
+<nav style="">
+  <div class="nav-logo">Hope Callaway</div>
+  <ul class="nav-links" style="">
+    <li><a href="#about" style="">About</a></li>
+    <li style=""><a href="#work" style="">Work</a></li>
+    <li style=""><a href="#how" style="">Approach</a></li>
+    <li style=""><a href="#contact" style="">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="">
+  <div class="hero-inner" style="">
+    <div class="hero-tag" style="">Senior Product Manager</div>
+    <h1 style="">I build products<br>people <em style=""><span class="grad-actually" style="">actually</span></em> need.</h1>
+    <p class="hero-sub" style="">11 years of customer empathy, a systems thinker's mind, and a builder's hands. I create strategy where one doesn't exist and ship products that earn real trust.</p>
+    <div class="hero-cta" style="">
+      <a href="#work" class="btn btn-primary">See my work</a>
+      <a href="#contact" class="btn btn-secondary" style="">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about" style="">
+  <div class="section-inner">
+    <div class="about-grid" style="">
+      <div class="about-text fade-up" style="">
+        <p class="section-label" style="">About</p>
+        <h2 class="section-title" style="">I listen differently<br>than most PMs.</h2>
+        <p style="">I came up through technical support — 500+ customer interactions a week, spotting patterns before they showed up in metrics. That experience gave me something most PMs don't have: I know the difference between what customers say and what they actually mean.</p>
+        <p style="">For most of my product career I've been the <strong>sole PM</strong> at a B2B MarTech company serving 30K+ customers. No playbook handed to me. I built the strategy, championed the roadmap, and drove outcomes from discovery to shipped.</p>
+        <p style="">Most recently I've pushed into a new gear — using <strong>Claude Code</strong> to actually ship: 15 PRs and 13 production releases. Features that used to take months now take days or weeks. I'm not a PM who throws requirements over a wall. I'm in it with the team.</p>
+      </div>
+      <div class="about-principles fade-up" style="">
+        <div class="principle" style="">
+          <p class="principle-title">Ship to learn</p>
+          <p>The longer you wait to get something in customer hands, the higher the chance you overbuild or miss the thing you would have learned from real behavior.</p>
+        </div>
+        <div class="principle" style="">
+          <p class="principle-title">Signal first</p>
+          <p>Data, usage, customer conversations, and market movement — always before committing. And I know that customers don't always say what they mean.</p>
+        </div>
+        <div class="principle" style="">
+          <p class="principle-title">Own it fully</p>
+          <p>When something goes wrong, I'm in the room driving the fix. Not pointing fingers, not waiting for someone else to call it.</p>
+        </div>
+        <div class="principle" style="">
+          <p class="principle-title">Systems thinker</p>
+          <p>I think about the whole ecosystem — how things connect, where integration points become failure surfaces, and what the second-order effects are.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" id="stats" style="">
+  <div class="section-inner" style="">
+    <p class="section-label fade-up" style="">Impact by the numbers</p>
+    <div class="stats-grid" style="">
+      <div class="stat-card fade-up">
+        <div class="stat-number">$15<span>-17K</span></div>
+        <div class="stat-label">MRR from a 0-to-1 add-on I championed, sustained for 2+ years</div>
+      </div>
+      <div class="stat-card fade-up" style="">
+        <div class="stat-number" style="">2.4<span>x</span></div>
+        <div class="stat-label" style="">Trial conversion improvement — 20% to 48% through value-based gating</div>
+      </div>
+      <div class="stat-card fade-up" style="">
+        <div class="stat-number" style="">&lt;1<span style="">day</span></div>
+        <div class="stat-label" style="">Time to publish, down from 2.5 days after shipping Brand Kits</div>
+      </div>
+      <div class="stat-card fade-up">
+        <div class="stat-number">15<span>PRs</span></div>
+        <div class="stat-label">Production releases shipped personally using Claude Code in 13 releases</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work" style="">
+  <div class="section-inner" style="">
+    <p class="section-label fade-up" style="">Selected work</p>
+    <h2 class="section-title fade-up" style="">Products I've driven<br>from zero to shipped.</h2>
+    <div class="work-grid" style="">
+      <div class="work-card fade-up" style="">
+        <span class="work-tag">0 to 1 · Monetization</span>
+        <h3>Brand Kits</h3>
+        <p>Customers were losing days to repetitive formatting work before a single page went live. I identified the gap, built the solution, and made it a foundation for AI-generated content that actually looks and feels like the user's brand.</p>
+        <div class="work-metric">Time to publish: 2.5 days → under 1 day</div>
+      </div>
+      <div class="work-card fade-up" style="">
+        <span class="work-tag">0 to 1 · Expansion MRR</span>
+        <h3>User Permissions Add-On</h3>
+        <p>The number one customer request for years — consistently deprioritized. I made the case, scoped it to ship fast, and got it across the line. It's been running strong ever since.</p>
+        <div class="work-metric">$15-17K MRR sustained for 2+ years · 1.79% churn</div>
+      </div>
+      <div class="work-card fade-up" style="">
+        <span class="work-tag">Product Decision · Conversion</span>
+        <h3>Trial Publish Gating</h3>
+        <p>A platform risk required a hard product decision that fundamentally changed how we measured trial value. What started as a defensive call became one of the highest-impact conversion moves we made.</p>
+        <div class="work-metric">Trial conversion: 20% → 48% · Revenue window: 14 days → 7</div>
+      </div>
+      <div class="work-card fade-up" style="">
+        <span class="work-tag">AI · Builder</span>
+        <h3>Claude Code — PM as Builder</h3>
+        <p>Expanded from decision-maker to hands-on builder — personally shipping production code alongside the engineering team. Also built AI-powered internal workflows that compressed the full discovery-to-kickoff cycle.</p>
+        <div class="work-metric">15 PRs · 13 releases · 40% faster discovery-to-kickoff</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section class="how" id="how" style="">
+  <div class="section-inner" style="">
+    <p class="section-label fade-up" style="">How I work</p>
+    <h2 class="section-title fade-up" style="">My approach to<br>building products.</h2>
+    <div class="how-grid" style="">
+      <div class="how-item fade-up" style="">
+        <div class="how-num" style="">01</div>
+        <h3 style="">Start with signal</h3>
+        <p style="">Company goals, usage data, customer conversations, and market movement — before anything else. I form hypotheses and find the fastest path to validate them, whether that's an interview, a prototype, or a small build.</p>
+      </div>
+      <div class="how-item fade-up" style="">
+        <div class="how-num" style="">02</div>
+        <h3 style="">Create strategy in ambiguity</h3>
+        <p style="">I've spent most of my career without a clear top-down strategy. That means I've learned to find the customer-valid version of any directive, identify opportunities no one assigned me, and build the case from the ground up.</p>
+      </div>
+      <div class="how-item fade-up">
+        <div class="how-num" style="">03</div>
+        <h3>Ship to learn</h3>
+        <p>The longer you wait, the higher the chance you overbuild or miss critical learnings. MVPs, betas, prototypes — whatever gets something in customer hands fastest so you can stop guessing.</p>
+      </div>
+      <div class="how-item fade-up">
+        <div class="how-num">04</div>
+        <h3>Trust is earned through output</h3>
+        <p>Especially in AI products, users are skeptical until something actually works for them. Generic output loses them. Output that feels like it knows their business keeps them. I build for the latter.</p>
+      </div>
+      <div class="how-item fade-up" style="">
+        <div class="how-num" style="">05</div>
+        <h3 style="">Team, not handoff</h3>
+        <p style="">Engineering is a partner, not a downstream recipient. I bring enough technical fluency to ask the right questions, challenge assumptions, and now — put up PRs they can review.</p>
+      </div>
+      <div class="how-item fade-up" style="">
+        <div class="how-num" style="">06</div>
+        <h3 style="">Own the outcome</h3>
+        <p style="">When something goes wrong I'm in the room driving the fix — not pointing fingers, not waiting. And when something goes well, the metrics tell the story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" style="">
+  <div class="section-inner" style="">
+    <p class="section-label" style="">Contact</p>
+    <h2 class="section-title" style="">Let's build something<br>worth being proud of.</h2>
+    <p style="">I'm a Senior PM with deep B2B SaaS roots, AI product experience, and a genuine love for the craft of building things customers actually need. <br>If that sounds like a fit, let's talk.</p>
+    <div class="contact-links" style="">
+      <a href="mailto:callaway.hope2@gmail.com" class="btn btn-primary">callaway.hope2@gmail.com</a>
+      <a href="https://linkedin.com/in/hope-callaway" class="btn btn-secondary" target="_blank" style="">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer style="">
+  <p>Hope Callaway — Senior Product Manager</p>
+  <p>St. Paul, MN · Remote</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+
+
+</body></html>
